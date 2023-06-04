@@ -17,16 +17,14 @@ public partial class TravelingContext : DbContext
 
     public virtual DbSet<Ciudad> Ciudades { get; set; }
 
-    public virtual DbSet<TiposV> TiposVs { get; set; }
+    public virtual DbSet<TipoV> TiposV { get; set; }
 
     public virtual DbSet<Vehiculo> Vehiculos { get; set; }
 
     public virtual DbSet<Viaje> Viajes { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
-        
-    }
-/* #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+    /* protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=DESKTOP-URF6P4H\\SQLEXPRESS;Initial Catalog=traveling;integrated security=true;TrustServerCertificate=True"); */
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -35,16 +33,16 @@ public partial class TravelingContext : DbContext
         {
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
-                .IsFixedLength();
+                .IsUnicode(false);
         });
 
-        modelBuilder.Entity<TiposV>(entity =>
+        modelBuilder.Entity<TipoV>(entity =>
         {
             entity.ToTable("TiposV");
 
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
-                .IsFixedLength();
+                .IsUnicode(false);
         });
 
         modelBuilder.Entity<Vehiculo>(entity =>
@@ -58,7 +56,7 @@ public partial class TravelingContext : DbContext
 
             entity.HasOne(d => d.IdTipoNavigation).WithMany(p => p.Vehiculos)
                 .HasForeignKey(d => d.IdTipo)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Vehiculos_TiposV");
         });
 

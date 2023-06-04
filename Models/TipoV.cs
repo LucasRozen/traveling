@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace travelApp.Models;
 
-public partial class TiposV
+public partial class TipoV
 {
     public int Id { get; set; }
 

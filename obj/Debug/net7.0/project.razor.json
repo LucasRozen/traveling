@@ -18660,13 +18660,53 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Ciudad\\Delete.cshtml",
+      "TargetPath": "Views\\Ciudad\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Ciudad\\Create.cshtml",
+      "TargetPath": "Views\\Ciudad\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Vehiculo\\Index.cshtml",
+      "TargetPath": "Views\\Vehiculo\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Vehiculo\\Delete.cshtml",
+      "TargetPath": "Views\\Vehiculo\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Ciudad\\Edit.cshtml",
+      "TargetPath": "Views\\Ciudad\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Ciudad\\Details.cshtml",
+      "TargetPath": "Views\\Ciudad\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Ciudad\\Index.cshtml",
+      "TargetPath": "Views\\Ciudad\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Vehiculo\\Create.cshtml",
+      "TargetPath": "Views\\Vehiculo\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18677,6 +18717,16 @@
     {
       "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Vehiculo\\Details.cshtml",
+      "TargetPath": "Views\\Vehiculo\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Vehiculo\\Edit.cshtml",
+      "TargetPath": "Views\\Vehiculo\\Edit.cshtml",
       "FileKind": "mvc"
     }
   ],

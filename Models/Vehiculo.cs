@@ -5,6 +5,10 @@ namespace travelApp.Models;
 
 public partial class Vehiculo
 {
+    public Vehiculo()
+    {
+    }
+
     public int Id { get; set; }
 
     public int IdTipo { get; set; }
@@ -13,7 +17,7 @@ public partial class Vehiculo
 
     public string Marca { get; set; } = null!;
 
-    public virtual TiposV IdTipoNavigation { get; set; } = null!;
+    public virtual TipoV? IdTipoNavigation { get; set; } = null!;
 
     public virtual ICollection<Viaje> Viajes { get; set; } = new List<Viaje>();
 }
