@@ -18660,6 +18660,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Shared\\_AgregarViaje.cshtml",
+      "TargetPath": "Views\\Shared\\_AgregarViaje.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Viaje\\Edit.cshtml",
       "TargetPath": "Views\\Viaje\\Edit.cshtml",
       "FileKind": "mvc"

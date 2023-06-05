@@ -23,10 +23,10 @@
             <div class="form-group mb-2">
                 <label asp-for="Fecha" class="control-label">Fecha (dentro de los próximos 10 días)</label>
                 <input asp-for="Fecha" class="form-control" data-rule-validarFechaLluvia="true"/>
-                <span asp-validation-for="Fecha" class="alert-danger"></span>
+                <span asp-validation-for="Fecha" class="alert-danger" id="validacionFecha"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Agregar" class="btn btn-primary" />
+                <input type="submit" value="Agregar" id="btnSubmit" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -51,7 +51,7 @@
         @* function validarLluvia(fecha) {
             var ciudad = $('#IdCiudad').val(); // Obtener el valor de la ciudad desde el campo de entrada
 
-            var url = 'https://api.openweathermap.org/data/2.5/forecast/climate?q=' + ciudad + '&appid=040560428f04d841942b8aacca6b9089';
+            var url = `https://api.weatherapi.com/v1/forecast.json?key=6cc8f2ee22a14f66a7191453230506&q=${ciudad}&days=10&aqi=no&alerts=no`;
 
             return $.ajax({
                 url: url,
@@ -61,31 +61,31 @@
                     var lluviaEnFecha = false;
 
                     // Recorrer los datos de pronóstico en la respuesta de la API
-                    for (var i = 0; i < response.list.length; i++) {
-                        var pronostico = response.list[i];
+                    for (var i = 0; i < response.forecast.forecastday.length; i++) {
+                        var pronostico = response.forecast.forecastday[i];
 
                         // Obtener la fecha del pronóstico y compararla con la fecha ingresada
-                        var fechaPronostico = new Date(pronostico.dt_txt);
+                        var fechaPronostico = new Date(pronostico.date);
                         var fechaIngresada = new Date(fecha);
 
                         // Si las fechas coinciden, verificar si hay lluvia en el pronóstico
                         if (fechaPronostico.toDateString() === fechaIngresada.toDateString()) {
                             // Verificar si hay lluvia en el pronóstico
-                            if (pronostico.weather[0].main === 'Rain') {
+                            if (pronostico.day.condition.text === 'Patchy rain possible') {
                                 lluviaEnFecha = true;
                                 break;
                             }
                         }
                     }
 
-                    return lluviaEnFecha; 
+                    return !lluviaEnFecha; 
                 },
-                error: function () {
-                    // Manejar el error de la llamada a la API
+                error: function (error) {
+                    console.log(error)
                 }
             });
         } *@
-
+        
         @* $.validator.addMethod('validarFechaLluvia', function (value, element) {
             var permitido = false;
     
@@ -97,7 +97,7 @@
             return permitido;
         }, 'Está programado lluvia para esa fecha, elija otra.'); *@
 
-        $(document).ready(function() {
+        @* $(document).ready(function() {
             $("#Fecha").datetimepicker({
                 minDate: new Date(),
                 maxDate: new Date(new Date().getTime() + (10 * 24 * 60 * 60 * 1000)),
@@ -109,7 +109,7 @@
                     console.log(selectedValue);
                 }
             });
-        });
+        }); *@
 
     </script>
 }

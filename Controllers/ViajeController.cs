@@ -52,7 +52,7 @@ namespace travelApp.Controllers
         {
             ViewData["IdCiudad"] = new SelectList(_context.Ciudades, "Id", "Nombre");
             ViewData["IdVehiculo"] = new SelectList(_context.Vehiculos.Include(v => v.IdTipoNavigation).ToArray().DistinctBy(v=>v.IdTipoNavigation.Id), "Id", "IdTipoNavigation.Nombre");
-
+            
             return View();
         }
 

@@ -12,7 +12,7 @@ public partial class Viaje
 
     public int IdVehiculo { get; set; }
     
-    [DataType(DataType.DateTime)]
+    [DataType(DataType.Date)]
     [FechaViaje]
     public DateTime Fecha { get; set; }
 
