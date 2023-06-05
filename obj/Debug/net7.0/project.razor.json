@@ -18650,8 +18650,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Viaje\\Details.cshtml",
+      "TargetPath": "Views\\Viaje\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Viaje\\Edit.cshtml",
+      "TargetPath": "Views\\Viaje\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18700,6 +18710,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Viaje\\Create.cshtml",
+      "TargetPath": "Views\\Viaje\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Ciudad\\Index.cshtml",
       "TargetPath": "Views\\Ciudad\\Index.cshtml",
       "FileKind": "mvc"
@@ -18715,6 +18730,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Viaje\\Delete.cshtml",
+      "TargetPath": "Views\\Viaje\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -18727,6 +18747,11 @@
     {
       "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Vehiculo\\Edit.cshtml",
       "TargetPath": "Views\\Vehiculo\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lucas\\OneDrive\\Escritorio\\challenge_wirsolut\\travelApp\\Views\\Viaje\\Index.cshtml",
+      "TargetPath": "Views\\Viaje\\Index.cshtml",
       "FileKind": "mvc"
     }
   ],

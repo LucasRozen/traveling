@@ -1,4 +1,4 @@
-@model travelApp.Models.Vehiculo
+@model travelApp.Models.Viaje
 
 @{
     ViewData["Title"] = "Delete";
@@ -6,28 +6,28 @@
 
 <h1>Eliminar</h1>
 
-<h3>Estás seguro de que querés eliminar este vehículo?</h3>
+<h3>Estás seguro de que querés eliminar el viaje?</h3>
 <div>
-    <h4>Vehiculo</h4>
+    <h4>Viaje</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Patente)
+            @Html.DisplayNameFor(model => model.Fecha)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Patente)
+            @Html.DisplayFor(model => model.Fecha)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Marca)
+            @* @Html.DisplayNameFor(model => model.IdCiudadNavigation) *@Ciudad
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Marca)
+            @Html.DisplayFor(model => model.IdCiudadNavigation.Nombre)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdTipoNavigation.Nombre)
+            @* @Html.DisplayNameFor(model => model.IdVehiculoNavigation) *@Vehículo
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdTipoNavigation.Id)
+            @Html.DisplayFor(model => model.IdVehiculoNavigation.IdTipoNavigation.Nombre)
         </dd>
     </dl>
     

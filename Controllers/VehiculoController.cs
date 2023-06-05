@@ -81,7 +81,7 @@ namespace travelApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdTipo"] = new SelectList(_context.TiposV, "Id", "Id", vehiculo.IdTipo);
+            ViewData["IdTipo"] = new SelectList(_context.TiposV, "Id", "Nombre", vehiculo.IdTipo);
             return View(vehiculo);
         }
 
