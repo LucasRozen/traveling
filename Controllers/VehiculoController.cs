@@ -58,6 +58,12 @@ namespace travelApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdTipo,Patente,Marca")] Vehiculo vehiculo)
         {
+             bool existePatente = _context.Vehiculos.Any(v => v.Patente == vehiculo.Patente);
+
+            if (existePatente)
+            {
+                ModelState.AddModelError("Patente", "Ya existe un vehículo con esta patente");
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(vehiculo);

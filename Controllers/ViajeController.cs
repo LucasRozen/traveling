@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using travelApp.Models;
 
 namespace travelApp.Controllers
@@ -50,7 +51,7 @@ namespace travelApp.Controllers
         public IActionResult Create()
         {
             ViewData["IdCiudad"] = new SelectList(_context.Ciudades, "Id", "Nombre");
-            ViewData["IdVehiculo"] = new SelectList(_context.Vehiculos.Include(v => v.IdTipoNavigation), "Id", "IdTipoNavigation.Nombre");
+            ViewData["IdVehiculo"] = new SelectList(_context.Vehiculos.Include(v => v.IdTipoNavigation).ToArray().DistinctBy(v=>v.IdTipoNavigation.Id), "Id", "IdTipoNavigation.Nombre");
 
             return View();
         }

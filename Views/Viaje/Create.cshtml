@@ -21,9 +21,9 @@
                 <select asp-for="IdVehiculo" class ="form-control" asp-items="ViewBag.IdVehiculo"></select>
             </div>
             <div class="form-group mb-2">
-                <label asp-for="Fecha" class="control-label"></label>
-                <input asp-for="Fecha" class="form-control" />
-                <span asp-validation-for="Fecha" class="text-danger"></span>
+                <label asp-for="Fecha" class="control-label">Fecha (dentro de los próximos 10 días)</label>
+                <input asp-for="Fecha" class="form-control" data-rule-validarFechaLluvia="true"/>
+                <span asp-validation-for="Fecha" class="alert-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Agregar" class="btn btn-primary" />
@@ -36,12 +36,80 @@
     <a asp-action="Index">Volver a la lista</a>
 </div>
 
+
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+   
     <script>
         @* const dateControl = document.querySelector('#Fecha');
         dateControl.min = new Date();
         dateControl.max = new Date().setDate(new Date().getDate() + 10); *@
+
+        @* function validarLluvia(fecha) {
+            var ciudad = $('#IdCiudad').val(); // Obtener el valor de la ciudad desde el campo de entrada
+
+            var url = 'https://api.openweathermap.org/data/2.5/forecast/climate?q=' + ciudad + '&appid=040560428f04d841942b8aacca6b9089';
+
+            return $.ajax({
+                url: url,
+                method: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    var lluviaEnFecha = false;
+
+                    // Recorrer los datos de pronóstico en la respuesta de la API
+                    for (var i = 0; i < response.list.length; i++) {
+                        var pronostico = response.list[i];
+
+                        // Obtener la fecha del pronóstico y compararla con la fecha ingresada
+                        var fechaPronostico = new Date(pronostico.dt_txt);
+                        var fechaIngresada = new Date(fecha);
+
+                        // Si las fechas coinciden, verificar si hay lluvia en el pronóstico
+                        if (fechaPronostico.toDateString() === fechaIngresada.toDateString()) {
+                            // Verificar si hay lluvia en el pronóstico
+                            if (pronostico.weather[0].main === 'Rain') {
+                                lluviaEnFecha = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    return lluviaEnFecha; 
+                },
+                error: function () {
+                    // Manejar el error de la llamada a la API
+                }
+            });
+        } *@
+
+        @* $.validator.addMethod('validarFechaLluvia', function (value, element) {
+            var permitido = false;
+    
+            // Realizar la llamada a la función validarLluvia y devolver el resultado
+            validarLluvia(value).done(function (result) {
+                permitido = result;
+            });
+
+            return permitido;
+        }, 'Está programado lluvia para esa fecha, elija otra.'); *@
+
+        $(document).ready(function() {
+            $("#Fecha").datetimepicker({
+                minDate: new Date(),
+                maxDate: new Date(new Date().getTime() + (10 * 24 * 60 * 60 * 1000)),
+                dateFormat: "yy-mm-dd",
+                timeFormat: "HH:mm",
+                onSelect: function(dateText, inst) {
+                    // Capturar el valor seleccionado
+                    var selectedValue = $(this).val();
+                    console.log(selectedValue);
+                }
+            });
+        });
+
     </script>
 }
