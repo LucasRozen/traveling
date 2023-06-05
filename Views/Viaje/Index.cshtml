@@ -28,22 +28,22 @@
     </thead>
     <tbody>
         @foreach (var item in Model) {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Fecha)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IdCiudadNavigation.Nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IdVehiculoNavigation.IdTipoNavigation.Nombre)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="link-danger">Eliminar</a>
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdCiudadNavigation.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdVehiculoNavigation.IdTipoNavigation.Nombre)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="link-danger">Eliminar</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

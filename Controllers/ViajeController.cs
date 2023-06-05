@@ -70,7 +70,7 @@ namespace travelApp.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["IdCiudad"] = new SelectList(_context.Ciudades, "Id", "Nombre", viaje.IdCiudad);
-            ViewData["IdVehiculo"] = new SelectList(_context.Vehiculos.Include(v => v.IdTipoNavigation), "Id", "IdTipoNavigation.Nombre", viaje.IdVehiculo);
+            ViewData["IdVehiculo"] = new SelectList(_context.Vehiculos.Include(v => v.IdTipoNavigation).ToArray().DistinctBy(v=>v.IdTipoNavigation.Id), "Id", "IdTipoNavigation.Nombre", viaje.IdVehiculo);
             return View(viaje);
         }
 
@@ -88,7 +88,7 @@ namespace travelApp.Controllers
                 return NotFound();
             }
             ViewData["IdCiudad"] = new SelectList(_context.Ciudades, "Id", "Nombre", viaje.IdCiudad);
-            ViewData["IdVehiculo"] = new SelectList(_context.Vehiculos.Include(v => v.IdTipoNavigation), "Id", "IdTipoNavigation.Nombre", viaje.IdVehiculo);
+            ViewData["IdVehiculo"] = new SelectList(_context.Vehiculos.Include(v => v.IdTipoNavigation).ToArray().DistinctBy(v=>v.IdTipoNavigation.Id), "Id", "IdTipoNavigation.Nombre", viaje.IdVehiculo);
             return View(viaje);
         }
 
@@ -124,8 +124,8 @@ namespace travelApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCiudad"] = new SelectList(_context.Ciudades, "Nombre", "Id", viaje.IdCiudad);
-            ViewData["IdVehiculo"] = new SelectList(_context.Vehiculos.Include(v => v.IdTipoNavigation), "Id", "Id", viaje.IdVehiculo);
+            ViewData["IdCiudad"] = new SelectList(_context.Ciudades, "Id", "Nombre", viaje.IdCiudad);
+            ViewData["IdVehiculo"] = new SelectList(_context.Vehiculos.Include(v => v.IdTipoNavigation).ToArray().DistinctBy(v=>v.IdTipoNavigation.Id), "Id", "IdTipoNavigation.Nombre", viaje.IdVehiculo);
             return View(viaje);
         }
 
