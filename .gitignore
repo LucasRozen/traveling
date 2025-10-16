@@ -1,0 +1,90 @@
+# .gitignore para proyectos .NET 7
+
+# Directorios de build
+bin/
+obj/
+out/
+artifacts/
+publish/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+/.idea/
+
+# Paquetes NuGet y caches
+*.nupkg
+packages/
+.nuget/
+project.lock.json
+project.fragment.lock.json
+
+# Archivos de publicación y despliegue
+wwwroot/node_modules/
+wwwroot/dist/
+publish/
+*.Publish.xml
+
+# Archivos de logs y resultados de tests
+*.log
+TestResults/
+coverage/
+coverage*.json
+coverage*.xml
+*.lcov
+
+# Archivos generados
+*.dll
+*.exe
+*.pdb
+*.app
+*.class
+*.so
+*.dylib
+
+# Configuraciones locales / secretos
+secrets.json
+local.settings.json
+appsettings.*.Local.json
+appsettings.*.Development.json
+
+# Herramientas y caches comunes
+*.vspscc
+*.vssscc
+_ReSharper*/
+*.ReSharper.*
+resharper/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Base de datos local (ej. SQLite)
+*.db
+*.sqlite
+*.sqlite3
+
+# Archivos comprimidos / artefactos
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Otros archivos que suelen ignorarse
+.vscode-test/
+*.publishsettings
+.env
+.env.*.local

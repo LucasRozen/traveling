@@ -1,8 +1,0 @@
-{
-    "dataworkspace.excludedProjects": [
-        "traveling/traveling.sqlproj",
-        "challenge/challenge.sqlproj",
-        "traveling/traveling/traveling.sqlproj",
-        "project1/project1.sqlproj"
-    ]
-}
